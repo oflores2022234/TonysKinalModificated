@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandroflores.controller.TipoEmpleadoController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #572418;">
+         <children>
+            <Pane layoutX="39.0" layoutY="19.0" prefHeight="202.0" prefWidth="224.0" style="-fx-background-color: #fac336; -fx-background-radius: 50 50 50 50;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/empleadoTipo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="15.0" layoutY="2.0" text="Tipo Empleado" textFill="#f4f3db">
+                     <font>
+                        <Font name="Agency FB" size="45.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox layoutY="236.0" prefHeight="280.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="btnNuevo" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="70.0" prefWidth="300.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Nuevo" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB" size="30.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgNuevo" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Nuevo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEliminar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="70.0" prefWidth="300.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Eliminar" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB" size="30.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEliminar" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Eliminar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnEditar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="70.0" prefWidth="300.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Editar" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB" size="30.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEditar" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Editar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnReporte" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#reporte" prefHeight="70.0" prefWidth="300.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Reporte" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB" size="30.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgReporte" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/report.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <ImageView fitHeight="64.0" fitWidth="65.0" layoutX="102.0" layoutY="528.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/back.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="301.0" prefHeight="601.0" prefWidth="795.0" style="-fx-background-color: #dcc0b0;">
+         <children>
+            <Pane fx:id="pane1" layoutX="18.0" layoutY="272.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #55baab; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane2" layoutX="89.0" layoutY="293.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane3" layoutX="159.0" layoutY="317.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #fac336; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane4" layoutX="229.0" layoutY="339.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #55baab; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane5" layoutX="300.0" layoutY="364.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane11" layoutX="718.0" layoutY="274.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #55baab; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane10" layoutX="647.0" layoutY="295.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane9" layoutX="575.0" layoutY="319.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #fac336; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane8" layoutX="504.0" layoutY="348.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #55baab; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane7" layoutX="434.0" layoutY="365.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane6" layoutX="367.0" layoutY="386.0" prefHeight="352.0" prefWidth="61.0" style="-fx-background-color: #fac336; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane12" layoutX="3.0" layoutY="6.0" prefHeight="85.0" prefWidth="86.0" style="-fx-background-color: #f05628; -fx-background-radius: 0 50 0 50;" />
+            <Pane fx:id="pane13" layoutX="41.0" layoutY="95.0" prefHeight="85.0" prefWidth="86.0" style="-fx-background-color: #55baab; -fx-background-radius: 0 50 0 50;" />
+            <Pane fx:id="pane14" layoutX="95.0" layoutY="33.0" prefHeight="85.0" prefWidth="86.0" style="-fx-background-color: #fac336; -fx-background-radius: 0 50 0 50;">
+               <children>
+                  <GridPane layoutX="-73.0" layoutY="-2.0" prefHeight="158.0" prefWidth="731.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="80.9999755859375" minHeight="10.0" prefHeight="59.66663970947266" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="115.13336029052735" minHeight="10.0" prefHeight="115.13336029052735" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Código Tipo Empleado" textFill="#4f2113">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="18.0" text="Descripción" textFill="#4f2113" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDescripcionTipoEmpleado" prefHeight="83.0" prefWidth="366.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Agency FB" size="22.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txtCodigoTipoEmpleado" prefHeight="37.0" prefWidth="366.0" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Agency FB" size="22.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+            <TableView fx:id="tblTipoEmpleado" layoutX="25.0" layoutY="201.0" onMouseClicked="#seleccionarElemento" prefHeight="364.0" prefWidth="747.0" stylesheets="@../resource/TonysKinal.css">
+              <columns>
+                <TableColumn fx:id="colCodigoTipoEmpleado" prefWidth="192.53326416015625" text="Código Tipo Empleado" />
+                <TableColumn fx:id="colDescripcionTipoEmpleado" prefWidth="553.8667907714844" text="Descripción" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

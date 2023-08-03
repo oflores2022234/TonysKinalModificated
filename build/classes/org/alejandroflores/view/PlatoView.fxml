@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandroflores.controller.PlatoController">
+   <children>
+      <AnchorPane layoutX="-4.0" layoutY="-5.0" prefHeight="606.0" prefWidth="296.0" style="-fx-background-color: #572418;">
+         <children>
+            <Pane layoutX="34.0" layoutY="26.0" prefHeight="202.0" prefWidth="224.0" style="-fx-background-color: #fac336; -fx-background-radius: 50 50 50 50;">
+               <children>
+                  <Label layoutX="72.0" text="Platos" textFill="#f4f3db">
+                     <font>
+                        <Font name="Agency FB Bold" size="38.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="211.0" fitWidth="187.0" layoutX="17.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/plato.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <VBox layoutX="5.0" layoutY="250.0" prefHeight="284.0" prefWidth="286.0">
+               <children>
+                  <Button fx:id="btnNuevo" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Nuevo" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgNuevo" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Nuevo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEliminar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Eliminar" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgEliminar" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Eliminar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEditar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Editar" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgEditar" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Editar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnReporte" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#reporte" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Reporte" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgReporte" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/report.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="121.0" layoutY="534.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/back.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="285.0" prefHeight="600.0" prefWidth="812.0" style="-fx-background-color: #dcc0b0;">
+         <children>
+            <Pane fx:id="pane5" layoutX="685.0" layoutY="-60.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f5c03c; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane4" layoutX="746.0" layoutY="-19.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane6" layoutX="623.0" layoutY="-104.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #55baab; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane1" layoutX="22.0" layoutY="418.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #55baab; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane2" layoutX="89.0" layoutY="446.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane3" layoutX="160.0" layoutY="469.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f5c03c; -fx-background-radius: 50 50 50 50;" />
+            <Pane fx:id="pane7" layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #f05628; -fx-background-radius: 0 50 0 50;" />
+            <Pane fx:id="pane8" layoutX="128.0" layoutY="24.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #f5c03c; -fx-background-radius: 0 50 0 50;" />
+            <Pane fx:id="pane9" layoutX="28.0" layoutY="127.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #55baab; -fx-background-radius: 0 50 0 50;" />
+            <Pane fx:id="pane10" layoutX="149.0" layoutY="142.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #f05628; -fx-background-radius: 0 50 0 50;" />
+            <TableView fx:id="tblPlatos" layoutX="11.0" layoutY="150.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="430.0" prefWidth="792.0" stylesheets="@../resource/TonysKinal.css">
+               <columns>
+                  <TableColumn fx:id="colCodigoPlato" prefWidth="118.0" text="Cod. Plato" />
+                  <TableColumn fx:id="colCantidad" prefWidth="128.0" text="Cantidad." />
+                  <TableColumn fx:id="colNombrePlato" prefWidth="117.0" text="Nombre" />
+                  <TableColumn fx:id="colDescripcionPlato" prefWidth="157.0" text="Descripción" />
+                  <TableColumn fx:id="colPrecioPlato" prefWidth="111.0" text="Precio" />
+                  <TableColumn fx:id="colCodigoTipoPlato" prefWidth="159.0" text="Codigo Tipo Plato" />
+               </columns>
+            </TableView>
+            <GridPane layoutX="22.0" layoutY="14.0" prefHeight="129.0" prefWidth="753.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Código Plato" textFill="#4f2113">
+                     <font>
+                        <Font name="Agency FB" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Nombre" textFill="#4f2113" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Agency FB" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Precio" textFill="#4f2113" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Agency FB" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Cantidad" textFill="#4f2113" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Agency FB" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Descripción" textFill="#4f2113" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Agency FB" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Código Tipo Plato" textFill="#4f2113" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Agency FB" size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCodigoPlato" editable="false" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Agency FB" size="20.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtNombrePlato" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Agency FB" size="20.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtPrecioPlato" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Agency FB" size="20.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtCantidad" editable="false" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Agency FB" size="20.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtDescripcionPlato" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Agency FB" size="20.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="cmbCodigoTipoPlato" prefHeight="33.0" prefWidth="183.0" styleClass="combobox" stylesheets="@../resource/TonysKinal.css" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

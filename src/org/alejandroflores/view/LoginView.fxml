@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandroflores.controller.LoginController">
+   <children>
+      <Pane prefHeight="500.0" prefWidth="344.0" style="-fx-background-color: #f4f3db;">
+         <children>
+            <ImageView fitHeight="226.0" fitWidth="235.0" layoutX="48.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo1.jpg" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <Pane layoutX="344.0" layoutY="-1.0" prefHeight="507.0" prefWidth="458.0" style="-fx-background-color: #55baab;">
+         <children>
+            <ImageView fitHeight="124.0" fitWidth="139.0" layoutX="168.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/user.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="400.0" layoutY="-78.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+            <Pane layoutX="342.0" layoutY="-109.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+            <Pane layoutX="7.0" layoutY="-61.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f5c03c; -fx-background-radius: 50 50 50 50;" />
+            <Pane layoutX="64.0" layoutY="-89.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f5c03c; -fx-background-radius: 50 50 50 50;" />
+            <Pane layoutX="403.0" layoutY="371.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f5c03c; -fx-background-radius: 50 50 50 50;" />
+            <Label layoutX="83.0" layoutY="229.0" text="Usuario" textFill="#4f2113">
+               <font>
+                  <Font name="Agency FB" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="83.0" layoutY="285.0" text="Clave" textFill="#4f2113">
+               <font>
+                  <Font name="Agency FB" size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUsuario" layoutX="165.0" layoutY="238.0" prefHeight="25.0" prefWidth="183.0" />
+            <Button fx:id="btnLogin" layoutX="201.0" layoutY="341.0" mnemonicParsing="false" onAction="#Login" style="-fx-background-radius: 50 50 50 50;" styleClass="button2" stylesheets="@../resource/TonysKinal.css" text="Iniciar Sesion">
+               <font>
+                  <Font name="Agency FB" size="18.0" />
+               </font></Button>
+            <Hyperlink fx:id="lblRegistro" layoutX="201.0" layoutY="416.0" onAction="#ventanaUsuario" text="Registrese aqui" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="18.0" />
+               </font></Hyperlink>
+            <TextField fx:id="txtPassword" layoutX="165.0" layoutY="289.0" prefHeight="25.0" prefWidth="183.0" />
+         </children></Pane>
+      <Pane layoutX="349.0" layoutY="381.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+      <Pane layoutX="411.0" layoutY="403.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />
+      <Pane layoutX="689.0" layoutY="424.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f5c03c; -fx-background-radius: 50 50 50 50;" />
+   </children>
+</AnchorPane>

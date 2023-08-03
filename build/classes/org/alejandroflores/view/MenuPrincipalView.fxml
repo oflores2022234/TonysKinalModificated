@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alejandroflores.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="466.0" fitWidth="490.0" layoutX="77.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logo1.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="44.0" prefWidth="650.0" stylesheets="@../resource/TonysKinal.css">
+        <menus>
+          <Menu mnemonicParsing="false" text="Módulo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaEmpresa" text="Empresas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoEmpleado" text="Tipo Empleado" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaEmpleado" text="Empleados" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoPlato" text="Tipo Plato" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProducto" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServicio" text="Servicios" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaPresupuesto" text="Presupuestos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaPlato" text="Platos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Reportes">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaEmpresa" text="Empresa" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaPresupuesto" text="Presupuestos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaEmpresa" text="Profesor Armas" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" onAction="#ventanaProgramador" text="Has">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProHasPla" text="Producos_has_Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaSerHasPla" text="Servicios_has_Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaSerHasEmp" text="Servicios_has_Empleados" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" onAction="#ventanaProgramador" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Programador" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutY="44.0" prefHeight="608.0" prefWidth="78.0" style="-fx-background-color: #faf0bc;" />
+      <Label layoutX="563.0" layoutY="44.0" prefHeight="608.0" prefWidth="86.0" style="-fx-background-color: #faf0bc;" />
+      <Label layoutX="78.0" layoutY="44.0" prefHeight="56.0" prefWidth="492.0" style="-fx-background-color: #faf0bc;" />
+      <Label layoutX="78.0" layoutY="558.0" prefHeight="96.0" prefWidth="492.0" style="-fx-background-color: #faf0bc;" />
+      <Circle fill="#55bbac" layoutX="39.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="39.0" layoutY="127.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="39.0" layoutY="176.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="39.0" layoutY="228.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#55bbac" layoutX="39.0" layoutY="279.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="39.0" layoutY="339.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="39.0" layoutY="394.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="39.0" layoutY="449.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#55bbac" layoutX="39.0" layoutY="502.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="39.0" layoutY="558.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="39.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="606.0" layoutY="76.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="606.0" layoutY="131.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#55bbac" layoutX="606.0" layoutY="180.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="606.0" layoutY="232.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="606.0" layoutY="283.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="606.0" layoutY="343.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#55bbac" layoutX="606.0" layoutY="398.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="606.0" layoutY="453.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="606.0" layoutY="506.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="606.0" layoutY="562.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#55bbac" layoutX="606.0" layoutY="620.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="97.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="152.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="206.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#55bbac" layoutX="259.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="317.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="372.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="430.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#55bbac" layoutX="484.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="543.0" layoutY="72.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="109.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#55bbac" layoutX="164.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="218.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="271.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="318.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#55bbac" layoutX="373.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#fac336" layoutX="431.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#572418" layoutX="482.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ef572a" layoutX="541.0" layoutY="616.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>

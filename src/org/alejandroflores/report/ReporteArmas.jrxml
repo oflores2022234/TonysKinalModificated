@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteArmas" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b81af2e-468c-4835-bf44-b15de0fe5e72">
+	<property name="ireport.zoom" value="1.000000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="img1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_Reporte($P{codEmpresa});]]>
+	</queryString>
+	<field name="Nombre Empresa" class="java.lang.String"/>
+	<field name="Direccion Empresa" class="java.lang.String"/>
+	<field name="Telefono Empresa" class="java.lang.String"/>
+	<field name="Fecha De Solicitud" class="java.sql.Date"/>
+	<field name="Presupuesto" class="java.math.BigDecimal"/>
+	<field name="Tipo De Servicio" class="java.lang.String"/>
+	<field name="Fecha Servicio" class="java.sql.Date"/>
+	<field name="Hora de Servicio" class="java.sql.Time"/>
+	<field name="Lugar Del Servicio" class="java.lang.String"/>
+	<field name="Nombre Empleado" class="java.lang.String"/>
+	<field name="Grado de Cocinero" class="java.lang.String"/>
+	<field name="Descripcion Empleado" class="java.lang.String"/>
+	<field name="Cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre Plato" class="java.lang.String"/>
+	<field name="Descripcion Plato" class="java.lang.String"/>
+	<field name="Precio Plato" class="java.math.BigDecimal"/>
+	<field name="Descripcion Tipo Plato" class="java.lang.String"/>
+	<field name="Nombre Producto" class="java.lang.String"/>
+	<field name="Cantidad Producto" class="java.lang.Integer"/>
+	<background>
+		<band height="572" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="752" height="572" backcolor="#FFDFB7" uuid="ffcbcceb-0069-4cd5-8ca2-9c5ecb771133"/>
+			</rectangle>
+			<rectangle radius="20">
+				<reportElement x="705" y="10" width="44" height="221" forecolor="#55C8FF" backcolor="#00CCCC" uuid="7c908a77-98e9-4c7b-b87c-24765a316917"/>
+			</rectangle>
+			<rectangle radius="20">
+				<reportElement x="649" y="10" width="44" height="188" forecolor="#F05628" backcolor="#F05628" uuid="e0151e7b-430e-4d31-8b2f-ff04dc6a27c8"/>
+			</rectangle>
+			<rectangle radius="20">
+				<reportElement x="589" y="10" width="44" height="154" forecolor="#F5C03C" backcolor="#F5C03C" uuid="92d8ff4a-2672-4e35-8d24-b94cb4679dd2"/>
+			</rectangle>
+			<rectangle radius="20">
+				<reportElement x="25" y="351" width="44" height="221" forecolor="#55C8FA" backcolor="#00CCCC" uuid="72f0cf05-b1e3-468c-9a99-4f8d5649ce0e"/>
+			</rectangle>
+			<rectangle radius="20">
+				<reportElement x="83" y="389" width="44" height="183" forecolor="#F05628" backcolor="#F05628" uuid="db26cf13-760e-4f23-9ee8-5797d5e9c15e"/>
+			</rectangle>
+			<rectangle radius="20">
+				<reportElement x="144" y="422" width="44" height="150" forecolor="#F5C03C" backcolor="#F5C03C" uuid="0cac1aad-a194-4c6d-aa56-9475f4a231c4"/>
+			</rectangle>
+			<rectangle radius="20">
+				<reportElement x="528" y="10" width="44" height="116" forecolor="#572418" backcolor="#572418" uuid="84a4d98f-7d47-44c1-8281-55acb31a64a2"/>
+			</rectangle>
+			<rectangle radius="20">
+				<reportElement x="207" y="456" width="44" height="116" forecolor="#572418" backcolor="#572418" uuid="492c195c-b8aa-465e-b886-5d7fca22b4d8"/>
+			</rectangle>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="59" y="0" width="155" height="79" uuid="2bf3d4ae-dee0-49d8-82be-ba6b2cd4b2c9"/>
+				<imageExpression><![CDATA[ClassLoader.getSystemResource("org/alejandroflores/image/Empresa.png")]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="44" height="41" uuid="69aa8c96-65a9-492e-8324-d9d7970eb102"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre De Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="0" width="44" height="41" uuid="9cd752c9-5d23-47b9-b958-95fdfe84cb93"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección de la Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="0" width="44" height="41" uuid="79f861b4-6795-461d-a2e4-72fe66b3516b"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="0" width="44" height="41" uuid="51d39cd9-8c09-49d0-a3b8-b09d61c00f61"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Solicitud del Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="0" width="44" height="41" uuid="ecdc6d83-d8f3-4a8b-a945-693a967fa1f8"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Presupuesto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="0" width="44" height="41" uuid="316a96be-7fba-4832-9e2f-333d5ac50e4c"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo De Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="267" y="0" width="44" height="41" uuid="c59f32f3-d0f2-4f45-8176-7e968055e2c9"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Del Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="0" width="44" height="41" uuid="3e542956-3c89-49a4-ac76-0ce29dfea9b5"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora del Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="0" width="44" height="41" uuid="3de241f6-c9a3-4ed6-bc4d-e6236563dc34"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lugar Del Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="0" width="44" height="41" uuid="e9c31cb1-9923-4eb1-ac4e-310b81857ebb"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="44" height="41" uuid="27b15ed7-0d76-4223-be87-65f64dd0d23a"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="494" y="0" width="44" height="41" uuid="1e234850-9bec-46e1-83c8-fed9d3129113"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="538" y="0" width="44" height="41" uuid="4dbb2219-898b-4eff-ba7f-b28f4507d0ff"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="582" y="0" width="44" height="41" uuid="3c048d0b-aaaa-4bb5-a2b0-a54a4ae03bdb"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="626" y="0" width="44" height="41" uuid="24ec38a8-31ad-45aa-a043-9e5a76b855df"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="0" width="44" height="41" uuid="9bad70ca-e0ae-4e4f-9ce1-985fc4d1aa2a"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion Tipo Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="714" y="0" width="44" height="41" uuid="d51a702c-fa15-4c26-94a8-4a01d3a6d8b5"/>
+				<textElement>
+					<font fontName="Agency FB" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Producto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="44" height="41" uuid="50b0c91a-a7d7-48ca-833d-87d5415a948f"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre Empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="0" width="44" height="41" uuid="5dd0160e-33a1-4912-ab1a-a2bb341155b3"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Direccion Empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="0" width="44" height="41" uuid="f86ba9bd-a08c-4bb4-877f-e0df266e25b9"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefono Empresa}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM">
+				<reportElement x="134" y="0" width="44" height="41" uuid="24778dff-7861-4359-aa01-ac8defbc7e73"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha De Solicitud}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="178" y="0" width="44" height="41" uuid="430fc37d-bbb9-408d-8430-2abc767f7e3a"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Presupuesto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="0" width="44" height="41" uuid="080b22a9-0cf5-47e8-983c-24330c547cf4"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tipo De Servicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM">
+				<reportElement x="267" y="0" width="44" height="41" uuid="eff939dd-83d3-42bd-ba4c-98f649ec1572"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha Servicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm">
+				<reportElement x="311" y="0" width="48" height="41" uuid="7c7710a1-341c-4855-a6a3-3640f6771047"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Hora de Servicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="0" width="44" height="41" uuid="4c014582-aa00-42c1-8711-97de48da8da4"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Lugar Del Servicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="0" width="44" height="41" uuid="e6266438-4b88-4f7a-a85b-aa4001874521"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre Empleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="44" height="41" uuid="7fab0bcc-64ea-4701-8a81-11c729c0a641"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Descripcion Empleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="494" y="0" width="44" height="41" uuid="9f9a41a8-884d-4ae0-bcbf-7977998a74ab"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="538" y="0" width="44" height="41" uuid="3ac72cb6-0e94-4f05-b5e9-103849522c36"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre Plato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="582" y="0" width="44" height="41" uuid="abad6d0d-2fd9-4988-bd91-3f2a10925ce2"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Descripcion Plato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="626" y="0" width="44" height="41" uuid="58ac8986-4c66-47cb-969a-9e0e86fe6569"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Precio Plato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="0" width="44" height="41" uuid="7a37b152-5757-4e92-8329-d69c929138c4"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Descripcion Tipo Plato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="714" y="0" width="44" height="41" uuid="065ed2fa-4051-43d8-af97-237c5c93f1ca"/>
+				<textElement>
+					<font fontName="Agency FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre Producto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-2" y="0" width="1" height="41" uuid="faf1140a-2fba-4b3a-a7b4-b36df0349023"/>
+			</line>
+			<line>
+				<reportElement x="86" y="0" width="1" height="41" uuid="0454ae7e-be03-4f84-a2e4-4d3494c2602a"/>
+			</line>
+			<line>
+				<reportElement x="130" y="0" width="1" height="41" uuid="f3f47ab9-c05a-4872-a260-315cf7674071"/>
+			</line>
+			<line>
+				<reportElement x="175" y="0" width="1" height="41" uuid="f18355b7-0681-48c6-818e-57ab64f14617"/>
+			</line>
+			<line>
+				<reportElement x="221" y="0" width="1" height="41" uuid="a79d83b7-1ac3-45a4-b5a5-59f4cc7bfa91"/>
+			</line>
+			<line>
+				<reportElement x="263" y="0" width="1" height="41" uuid="ced588fb-27cc-4c39-99fd-02907ff8adec"/>
+			</line>
+			<line>
+				<reportElement x="306" y="0" width="1" height="41" uuid="803e0565-d389-4ad3-b38c-8df0d0eb5f1b"/>
+			</line>
+			<line>
+				<reportElement x="351" y="0" width="1" height="41" uuid="7e33486c-cbd6-4331-babe-4d50cc021f61"/>
+			</line>
+			<line>
+				<reportElement x="446" y="0" width="1" height="41" uuid="e97b0d40-33dd-4abc-b761-dcb29384a2a3"/>
+			</line>
+			<line>
+				<reportElement x="492" y="0" width="1" height="41" uuid="8d35e8cf-b6e8-4a16-92bd-60cfa47c6f73"/>
+			</line>
+			<line>
+				<reportElement x="536" y="0" width="1" height="41" uuid="89b0f0a6-6231-4049-bf35-a1febfad37bb"/>
+			</line>
+			<line>
+				<reportElement x="578" y="0" width="1" height="41" uuid="372b01c0-7bf7-4055-8950-9be539db73d9"/>
+			</line>
+			<line>
+				<reportElement x="624" y="0" width="1" height="41" uuid="b2d5f4c3-53d8-4cab-ada1-7b84c367589e"/>
+			</line>
+			<line>
+				<reportElement x="667" y="0" width="1" height="41" uuid="a018c5e2-42af-43ad-b41f-07490b54ff73"/>
+			</line>
+			<line>
+				<reportElement x="712" y="0" width="1" height="41" uuid="1f8e3f8a-42a4-4b99-b8a8-57ffca896170"/>
+			</line>
+			<line>
+				<reportElement x="0" y="41" width="758" height="1" forecolor="#000000" uuid="b8f70150-3384-4053-82fa-e0f881ada6ad"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="399" y="0" width="1" height="41" uuid="4a5c1118-372e-417e-8b84-9125673f1fc5"/>
+			</line>
+			<line>
+				<reportElement x="753" y="0" width="1" height="41" uuid="a10d1d49-89c2-44fd-900d-67eaa664ae76"/>
+			</line>
+			<line>
+				<reportElement x="41" y="0" width="1" height="41" uuid="7d3a9998-ae24-4fe5-92cd-e6ec569f3f0d"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="555" y="0" width="194" height="32" uuid="e5913511-9665-4f5d-9cc4-57c694f47c49"/>
+				<textElement>
+					<font fontName="Agency FB" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Servicio de Fiestas y Alimentos]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="649" y="34" width="100" height="20" uuid="17474e7c-74c6-4023-b2e7-2df875ac3df5"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
