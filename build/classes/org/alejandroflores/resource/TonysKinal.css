@@ -224,52 +224,6 @@ button2:pressed{
     -fx-text-alignment: center;
 }
 
-/*css para combo box*/
-/* Estilo base del combo box */
-.combobox {
-  position: relative;
-  display: inline-block;
-}
-
-.custom-combobox select {
-  width: 200px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #333;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-/* Estilo de la flecha */
-.custom-combobox::after {
-  content: '\25BC';
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  color: #999;
-}
-
-/* Estilo cuando el combo box está abierto */
-.custom-combobox select:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  border-color: rgba(81, 203, 238, 1);
-}
-
-/* Estilo cuando se pasa el mouse por encima del combo box */
-.custom-combobox select:hover {
-  border-color: rgba(81, 203, 238, 1);
-}
-
-/* Estilo del texto seleccionado */
-.custom-combobox option:checked {
-  background-color: rgba(81, 203, 238, 0.3);
-}
 
 
 

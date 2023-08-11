@@ -35,6 +35,17 @@ import javafx.scene.layout.Pane;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+
+import java.io.FileOutputStream;
+
+import java.io.*;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+
+
+
 public class EmpleadoController implements Initializable{
     
     private Principal escenarioPrincipal;
@@ -81,6 +92,8 @@ public class EmpleadoController implements Initializable{
     @FXML private Pane pane12;
     @FXML private Pane pane13;
     
+    @FXML private Button btnGenerarExcel;
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -105,6 +118,8 @@ public class EmpleadoController implements Initializable{
         aplicarAnimacionDesvanecimiento(pane11);
         aplicarAnimacionDesvanecimiento(pane12);
         aplicarAnimacionDesvanecimiento(pane13);
+        
+        btnGenerarExcel.setOnAction(event -> generarExcel());
         
     }
     
@@ -397,6 +412,60 @@ public class EmpleadoController implements Initializable{
             e.printStackTrace();
         }
     }
+    
+    
+    
+
+public void generarExcel() {
+    try {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Guardar Archivo Excel");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos Excel", "*.xls"));
+        File file = fileChooser.showSaveDialog(null);
+
+        if (file != null) {
+            Workbook workbook = new HSSFWorkbook();
+            Sheet sheet = workbook.createSheet("TablaEmpleados");
+
+            // Crear encabezados de columna
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("Código de Empleado");
+            headerRow.createCell(1).setCellValue("Número de Empleado");
+            headerRow.createCell(2).setCellValue("Apellidos");
+            headerRow.createCell(3).setCellValue("Nombres");
+            headerRow.createCell(4).setCellValue("Dirección");
+            headerRow.createCell(5).setCellValue("Teléfono");
+            headerRow.createCell(6).setCellValue("Grado Cocinero");
+            headerRow.createCell(7).setCellValue("Código de Tipo Empleado");
+
+            int rowNum = 1;
+            for (Empleado empleado : listaEmpleado) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(empleado.getCodigoEmpleado());
+                row.createCell(1).setCellValue(empleado.getNumeroEmpleado());
+                row.createCell(2).setCellValue(empleado.getApellidosEmpleado());
+                row.createCell(3).setCellValue(empleado.getNombresEmpleado());
+                row.createCell(4).setCellValue(empleado.getDireccionEmpleado());
+                row.createCell(5).setCellValue(empleado.getTelefonoContacto());
+                row.createCell(6).setCellValue(empleado.getGradoCocinero());
+                row.createCell(7).setCellValue(empleado.getCodigoTipoEmpleado());
+            }
+
+            // Autoajustar el ancho de las columnas
+            for (int col = 0; col < 8; col++) {
+                sheet.autoSizeColumn(col);
+            }
+
+            FileOutputStream fileOut = new FileOutputStream(file);
+            workbook.write(fileOut);
+            fileOut.close();
+
+            System.out.println("Archivo Excel generado exitosamente.");
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
     
     
     

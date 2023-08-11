@@ -22,19 +22,19 @@
          <children>
             <Pane layoutX="34.0" layoutY="26.0" prefHeight="202.0" prefWidth="224.0" style="-fx-background-color: #fac336; -fx-background-radius: 50 50 50 50;">
                <children>
-                  <Label layoutX="42.0" layoutY="25.0" text="Servicios" textFill="#f4f3db">
+                  <Label layoutX="17.0" layoutY="10.0" text="Servicios Has Platos" textFill="#f4f3db">
                      <font>
-                        <Font name="Agency FB" size="45.0" />
+                        <Font name="Agency FB" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="41.0" layoutY="89.0" text="Has Platos" textFill="#f4f3db">
-                     <font>
-                        <Font name="Agency FB" size="45.0" />
-                     </font>
-                  </Label>
+                  <ImageView fitHeight="125.0" fitWidth="122.0" layoutX="53.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/servHasPlato.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
-            <VBox layoutX="8.0" layoutY="301.0" prefHeight="167.0" prefWidth="286.0">
+            <VBox layoutX="8.0" layoutY="301.0" prefHeight="223.0" prefWidth="286.0">
                <children>
                   <Button fx:id="btnNuevo" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Nuevo" textFill="WHITE">
                      <graphic>
@@ -51,6 +51,18 @@
                   <Button fx:id="btnEliminar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" textFill="WHITE">
                      <graphic>
                         <ImageView fx:id="imgEliminar" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <font>
+                        <Font name="Agency FB" size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnGenerarExcel" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#generarExcel" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Excel" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgNuevo1" fitHeight="49.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/excel.png" />
+                           </image>
+                        </ImageView>
                      </graphic>
                      <font>
                         <Font name="Agency FB" size="30.0" />

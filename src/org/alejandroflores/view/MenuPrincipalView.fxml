@@ -28,6 +28,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#ventanaServicio" text="Servicios" />
                   <MenuItem mnemonicParsing="false" onAction="#ventanaPresupuesto" text="Presupuestos" />
                   <MenuItem mnemonicParsing="false" onAction="#ventanaPlato" text="Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#login" text="Login" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Reportes">

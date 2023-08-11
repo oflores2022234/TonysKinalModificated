@@ -22,16 +22,21 @@
          <children>
             <Pane layoutX="34.0" layoutY="26.0" prefHeight="202.0" prefWidth="224.0" style="-fx-background-color: #fac336; -fx-background-radius: 50 50 50 50;">
                <children>
-                  <Label layoutX="42.0" layoutY="25.0" text="Productos" textFill="#f4f3db">
+                  <Label layoutX="9.0" layoutY="21.0" text="Productos" textFill="#f4f3db">
                      <font>
-                        <Font name="Agency FB" size="45.0" />
+                        <Font name="Agency FB" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="41.0" layoutY="89.0" text="Has Platos" textFill="#f4f3db">
+                  <Label layoutX="111.0" layoutY="23.0" text="Has Platos" textFill="#f4f3db">
                      <font>
-                        <Font name="Agency FB" size="45.0" />
+                        <Font name="Agency FB" size="30.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="178.0" fitWidth="183.0" layoutX="20.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/prohasplato.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
             <VBox layoutX="3.0" layoutY="303.0" prefHeight="184.0" prefWidth="286.0">

@@ -23,6 +23,17 @@ import org.alejandroflores.bean.ServicioHasPlato;
 import org.alejandroflores.db.Conexion;
 import org.alejandroflores.main.Principal;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+
+import java.io.FileOutputStream;
+
+import java.io.*;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+
+
+
 public class ServicioHaPlatoController implements Initializable {
     
     private Principal escenarioPrincipal;
@@ -43,6 +54,9 @@ public class ServicioHaPlatoController implements Initializable {
     @FXML private Button btnEliminar;
     @FXML private Button btnEditar;
     @FXML private Button btnReporte;
+    
+    @FXML private Button btnGenerarExcel;
+    
     @FXML private ImageView imgNuevo;
     @FXML private ImageView imgEliminar;
     @FXML private ImageView imgEditar;
@@ -54,6 +68,7 @@ public class ServicioHaPlatoController implements Initializable {
         cargarDatos();
         cmbCodigoPlato.setItems(getPlato());
         cmbCodigoServicio.setItems(getServicio());
+        btnGenerarExcel.setOnAction(event -> generarExcel());
     }
     
     public void cargarDatos(){
@@ -221,6 +236,54 @@ public class ServicioHaPlatoController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    public void generarExcel() {
+    try {
+        Workbook workbook = new HSSFWorkbook();
+        Sheet sheet = workbook.createSheet("TablaServiciosHasPlatos");
+
+        // Crear encabezados de columna
+        Row headerRow = sheet.createRow(0);
+        headerRow.createCell(0).setCellValue("Código de Servicio");
+        headerRow.createCell(1).setCellValue("Código de Plato");
+        headerRow.createCell(2).setCellValue("Código de Servicio");
+
+        int rowNum = 1;
+        for (ServicioHasPlato shp : listaServicioHasPlato) {
+            Row row = sheet.createRow(rowNum++);
+            row.createCell(0).setCellValue(shp.getServicios_codigoServicio());
+            row.createCell(1).setCellValue(shp.getCodigoPlato());
+            row.createCell(2).setCellValue(shp.getCodigoServicio());
+        }
+
+        // Autoajustar el ancho de las columnas
+        for (int col = 0; col < 3; col++) {
+            sheet.autoSizeColumn(col);
+        }
+
+        // Mostrar el diálogo de guardar
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Guardar Archivo Excel");
+        fileChooser.getExtensionFilters().add(new ExtensionFilter("Archivos Excel (*.xls)", "*.xls"));
+        File archivo = fileChooser.showSaveDialog(null);
+
+        if (archivo != null) {
+            FileOutputStream fileOut = new FileOutputStream(archivo);
+            workbook.write(fileOut);
+            fileOut.close();
+            System.out.println("Archivo Excel generado exitosamente.");
+        } else {
+            System.out.println("Generación de archivo Excel cancelada.");
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+    
+    
+    
+    
     
     public void activarControles(){
         txtServicios_codigoServicio.setEditable(true);

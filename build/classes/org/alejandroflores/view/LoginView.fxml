@@ -43,8 +43,14 @@
                </font>
             </Label>
             <TextField fx:id="txtUsuario" layoutX="165.0" layoutY="238.0" prefHeight="25.0" prefWidth="183.0" />
-            <Button fx:id="btnLogin" layoutX="206.0" layoutY="354.0" mnemonicParsing="false" onAction="#Login" style="-fx-background-radius: 50 50 50 50;" styleClass="button2" stylesheets="@../resource/TonysKinal.css" text="Iniciar Sesion" />
-            <Hyperlink fx:id="lblRegistro" layoutX="203.0" layoutY="416.0" onAction="#ventanaUsuario" text="Registrese aqui" textFill="WHITE" />
+            <Button fx:id="btnLogin" layoutX="201.0" layoutY="341.0" mnemonicParsing="false" onAction="#Login" style="-fx-background-radius: 50 50 50 50;" styleClass="button2" stylesheets="@../resource/TonysKinal.css" text="Iniciar Sesion">
+               <font>
+                  <Font name="Agency FB" size="18.0" />
+               </font></Button>
+            <Hyperlink fx:id="lblRegistro" layoutX="201.0" layoutY="416.0" onAction="#ventanaUsuario" text="Registrese aqui" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="18.0" />
+               </font></Hyperlink>
             <TextField fx:id="txtPassword" layoutX="165.0" layoutY="289.0" prefHeight="25.0" prefWidth="183.0" />
          </children></Pane>
       <Pane layoutX="349.0" layoutY="381.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f05628; -fx-background-radius: 50 50 50 50;" />

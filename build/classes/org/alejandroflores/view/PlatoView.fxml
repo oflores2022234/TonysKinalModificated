@@ -183,7 +183,7 @@
                         <Font name="Agency FB" size="20.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="cmbCodigoTipoPlato" prefHeight="33.0" prefWidth="183.0" styleClass="combobox" stylesheets="@../resource/TonysKinal.css" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="cmbCodigoTipoPlato" prefHeight="33.0" prefWidth="183.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>
