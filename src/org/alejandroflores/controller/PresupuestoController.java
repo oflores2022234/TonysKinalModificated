@@ -44,6 +44,16 @@ import javafx.scene.layout.Pane;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+
+import java.io.FileOutputStream;
+
+import java.io.*;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+import org.alejandroflores.bean.Servicio;
+
 public class PresupuestoController implements Initializable {
     
     private Principal escenarioPrincipal;
@@ -91,6 +101,8 @@ public class PresupuestoController implements Initializable {
     @FXML private Pane pane17;
     @FXML private Pane pane18;
     
+    @FXML private Button btnGenerarExcel;
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cargarDatos();
@@ -125,6 +137,8 @@ public class PresupuestoController implements Initializable {
         aplicarAnimacionDesvanecimiento(pane16);
         aplicarAnimacionDesvanecimiento(pane17);
         aplicarAnimacionDesvanecimiento(pane18);
+        
+        btnGenerarExcel.setOnAction(event -> generarExcel());
     }
     
     private void addAnimation(Button button) {
@@ -395,6 +409,55 @@ public class PresupuestoController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    
+    public void generarExcel() {
+        try {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Guardar Archivo Excel");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos Excel", "*.xls"));
+            File file = fileChooser.showSaveDialog(null);
+
+            if (file != null) {
+                Workbook workbook = new HSSFWorkbook();
+                Sheet sheet = workbook.createSheet("TablaPresupuesto");
+
+                // Crear encabezados de columna
+                Row headerRow = sheet.createRow(0);
+                headerRow.createCell(0).setCellValue("Código Presupuesto");
+                headerRow.createCell(1).setCellValue("Fecha Solicutud");
+                headerRow.createCell(2).setCellValue("Cantidad Presupuesto");
+                headerRow.createCell(3).setCellValue("Código Empresa");
+
+
+
+                int rowNum = 1;
+                for (Presupuesto presupuesto : listaPresupuesto) {
+                    Row row = sheet.createRow(rowNum++);
+                    row.createCell(0).setCellValue(presupuesto.getCodigoPresupuesto());
+                    row.createCell(1).setCellValue(presupuesto.getFechaSolicitud());
+                    row.createCell(2).setCellValue(presupuesto.getCantidadPresupuesto());
+                    row.createCell(3).setCellValue(presupuesto.getCodigoEmpresa());
+
+
+                }
+
+                // Autoajustar el ancho de las columnas
+                for (int col = 0; col < 8; col++) {
+                    sheet.autoSizeColumn(col);
+                }
+
+                FileOutputStream fileOut = new FileOutputStream(file);
+                workbook.write(fileOut);
+                fileOut.close();
+
+                System.out.println("Archivo Excel generado exitosamente.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     
     
     public void desactivarControles(){

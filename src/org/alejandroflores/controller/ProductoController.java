@@ -33,6 +33,19 @@ import javafx.scene.layout.Pane;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+
+import java.io.FileOutputStream;
+
+import java.io.*;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+import org.alejandroflores.bean.Servicio;
+import org.alejandroflores.bean.TipoPlato;
+
+
 public class ProductoController implements Initializable {
     private enum operaciones{NUEVO, GUARDAR, ELIMINAR, ACTUALIZAR, CANCELAR, NINGUNO};
     private operaciones tipoDeOperacion = operaciones.NINGUNO;
@@ -74,6 +87,8 @@ public class ProductoController implements Initializable {
     @FXML private Pane pane17;
     @FXML private Pane pane18;
         
+    @FXML private Button btnGenerarExcel;
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cargarDatos();
@@ -101,6 +116,8 @@ public class ProductoController implements Initializable {
         aplicarAnimacionDesvanecimiento(pane16);
         aplicarAnimacionDesvanecimiento(pane17);
         aplicarAnimacionDesvanecimiento(pane18);
+        
+        btnGenerarExcel.setOnAction(event -> generarExcel());
         
     }
     
@@ -321,6 +338,52 @@ public class ProductoController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    
+    public void generarExcel() {
+        try {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Guardar Archivo Excel");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos Excel", "*.xls"));
+            File file = fileChooser.showSaveDialog(null);
+
+            if (file != null) {
+                Workbook workbook = new HSSFWorkbook();
+                Sheet sheet = workbook.createSheet("TablaProducto");
+
+                // Crear encabezados de columna
+                Row headerRow = sheet.createRow(0);
+                headerRow.createCell(0).setCellValue("Código Producto");
+                headerRow.createCell(1).setCellValue("Nombre Proeucto");
+                headerRow.createCell(2).setCellValue("Cantidad");
+
+
+                int rowNum = 1;
+                for (Producto producto : listaProducto) {
+                    Row row = sheet.createRow(rowNum++);
+                    row.createCell(0).setCellValue(producto.getCodigoProducto());
+                    row.createCell(1).setCellValue(producto.getNombreProducto());
+                    row.createCell(2).setCellValue(producto.getCantidad());
+
+                }
+
+                // Autoajustar el ancho de las columnas
+                for (int col = 0; col < 8; col++) {
+                    sheet.autoSizeColumn(col);
+                }
+
+                FileOutputStream fileOut = new FileOutputStream(file);
+                workbook.write(fileOut);
+                fileOut.close();
+
+                System.out.println("Archivo Excel generado exitosamente.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
    
     public void seleccionarElemento(){
         txtCodigoProducto.setText(String.valueOf(((Producto)tblProductos.getSelectionModel().getSelectedItem()).getCodigoProducto()));

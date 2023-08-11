@@ -35,54 +35,66 @@
                   </Label>
                </children>
             </Pane>
-            <VBox layoutX="5.0" layoutY="250.0" prefHeight="289.0" prefWidth="286.0">
+            <VBox layoutX="5.0" layoutY="237.0" prefHeight="289.0" prefWidth="286.0">
                <children>
-                  <Button fx:id="btnNuevo" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Nuevo" textFill="WHITE">
+                  <Button fx:id="btnNuevo" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="52.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Nuevo" textFill="WHITE">
                      <graphic>
-                        <ImageView fx:id="imgNuevo" fitHeight="49.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgNuevo" fitHeight="40.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/Nuevo.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB" size="25.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnEliminar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Eliminar" textFill="WHITE">
+                  <Button fx:id="btnEliminar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="52.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Eliminar" textFill="WHITE">
                      <graphic>
-                        <ImageView fx:id="imgEliminar" fitHeight="49.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgEliminar" fitHeight="40.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/Eliminar.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB" size="25.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnEditar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Editar" textFill="WHITE">
+                  <Button fx:id="btnEditar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="52.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Editar" textFill="WHITE">
                      <graphic>
-                        <ImageView fx:id="imgEditar" fitHeight="49.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgEditar" fitHeight="40.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/Editar.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB" size="25.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnReporte" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#generarReporte" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Reporte" textFill="WHITE">
+                  <Button fx:id="btnReporte" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#generarReporte" prefHeight="52.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Reporte" textFill="WHITE">
                      <graphic>
-                        <ImageView fx:id="imgReporte" fitHeight="49.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgReporte" fitHeight="40.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../image/report.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnGenerarExcel" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#generarExcel" prefHeight="72.0" prefWidth="286.0" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Excel" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="imgNuevo1" fitHeight="40.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/excel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Agency FB" size="25.0" />
                      </font>
                   </Button>
                </children>

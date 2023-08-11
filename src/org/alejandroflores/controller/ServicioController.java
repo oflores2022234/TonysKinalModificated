@@ -38,6 +38,16 @@ import javafx.scene.layout.Pane;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+
+import java.io.FileOutputStream;
+
+import java.io.*;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+
+
 public class ServicioController implements Initializable {
     
     private enum operaciones {NUEVO, GUARDAR, ELIMINAR, ACTUALIZAR, NINGUNO};
@@ -83,6 +93,8 @@ public class ServicioController implements Initializable {
     @FXML private Pane pane8;
     @FXML private Pane pane9;
     @FXML private Pane pane10;
+    
+    @FXML private Button btnGenerarExcel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -113,6 +125,8 @@ public class ServicioController implements Initializable {
         aplicarAnimacionDesvanecimiento(pane8);
         aplicarAnimacionDesvanecimiento(pane9);
         aplicarAnimacionDesvanecimiento(pane10);
+        
+        btnGenerarExcel.setOnAction(event -> generarExcel());
         
     }
     
@@ -431,6 +445,60 @@ public class ServicioController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    
+    public void generarExcel() {
+        try {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Guardar Archivo Excel");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos Excel", "*.xls"));
+            File file = fileChooser.showSaveDialog(null);
+
+            if (file != null) {
+                Workbook workbook = new HSSFWorkbook();
+                Sheet sheet = workbook.createSheet("TablaPlato");
+
+                // Crear encabezados de columna
+                Row headerRow = sheet.createRow(0);
+                headerRow.createCell(0).setCellValue("Código Servicio");
+                headerRow.createCell(1).setCellValue("Fecha Servicio");
+                headerRow.createCell(2).setCellValue("Tipo Servicio");
+                headerRow.createCell(3).setCellValue("Hora Servicio");
+                headerRow.createCell(4).setCellValue("Lugar Servicio");
+                headerRow.createCell(5).setCellValue("Teléfono Contacto");
+                headerRow.createCell(6).setCellValue("Código Empresa");
+
+
+                int rowNum = 1;
+                for (Servicio servicio : listaServicio) {
+                    Row row = sheet.createRow(rowNum++);
+                    row.createCell(0).setCellValue(servicio.getCodigoServicio());
+                    row.createCell(1).setCellValue(servicio.getFechaServicio());
+                    row.createCell(2).setCellValue(servicio.getTipoServicio());
+                    row.createCell(3).setCellValue(servicio.getHoraServicio());
+                    row.createCell(4).setCellValue(servicio.getLugarServicio());
+                    row.createCell(5).setCellValue(servicio.getTelefonoContacto());
+                    row.createCell(6).setCellValue(servicio.getCodigoEmpresa());
+
+                }
+
+                // Autoajustar el ancho de las columnas
+                for (int col = 0; col < 8; col++) {
+                    sheet.autoSizeColumn(col);
+                }
+
+                FileOutputStream fileOut = new FileOutputStream(file);
+                workbook.write(fileOut);
+                fileOut.close();
+
+                System.out.println("Archivo Excel generado exitosamente.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
     
     public void desactivarControles(){
         txtCodigoServicio.setEditable(false);

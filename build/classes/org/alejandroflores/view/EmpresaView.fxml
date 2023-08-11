@@ -98,7 +98,7 @@
                   </Button>
                </children>
             </VBox>
-            <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="107.0" layoutY="548.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="107.0" layoutY="553.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/back.png" />
                </image>

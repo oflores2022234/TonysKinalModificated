@@ -33,7 +33,18 @@ import javafx.animation.Timeline;
 import javafx.animation.FadeTransition;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.Alert;
-import javafx.scene.control.DialogPane;
+import javafx.scene.control.DialogPane; 
+
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+
+import java.io.FileOutputStream;
+
+import java.io.*;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+import org.alejandroflores.bean.Empleado;
 
 public class PlatoController implements Initializable {
     
@@ -74,6 +85,8 @@ public class PlatoController implements Initializable {
     @FXML private Pane pane9;
     @FXML private Pane pane10;
     
+    @FXML private Button btnGenerarExcel;
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -95,6 +108,8 @@ public class PlatoController implements Initializable {
         aplicarAnimacionDesvanecimiento(pane8);
         aplicarAnimacionDesvanecimiento(pane9);
         aplicarAnimacionDesvanecimiento(pane10);
+        
+        btnGenerarExcel.setOnAction(event -> generarExcel());
     }
     
     private void addAnimation(Button button) {
@@ -366,6 +381,55 @@ public class PlatoController implements Initializable {
             procedimiento.setInt(5, registro.getCodigoTipoPlato());
             procedimiento.execute();
             listaPlato.add(registro);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void generarExcel() {
+        try {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Guardar Archivo Excel");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos Excel", "*.xls"));
+            File file = fileChooser.showSaveDialog(null);
+
+            if (file != null) {
+                Workbook workbook = new HSSFWorkbook();
+                Sheet sheet = workbook.createSheet("TablaPlato");
+
+                // Crear encabezados de columna
+                Row headerRow = sheet.createRow(0);
+                headerRow.createCell(0).setCellValue("Código Plato");
+                headerRow.createCell(1).setCellValue("Cantidad");
+                headerRow.createCell(2).setCellValue("Nombre Plato");
+                headerRow.createCell(3).setCellValue("Descripción Plato");
+                headerRow.createCell(4).setCellValue("Precio Plato");
+                headerRow.createCell(5).setCellValue("Código Tipo Plato");
+
+
+                int rowNum = 1;
+                for (Plato plato : listaPlato) {
+                    Row row = sheet.createRow(rowNum++);
+                    row.createCell(0).setCellValue(plato.getCodigoPlato());
+                    row.createCell(1).setCellValue(plato.getCantidad());
+                    row.createCell(2).setCellValue(plato.getNombrePlato());
+                    row.createCell(3).setCellValue(plato.getDescripcionPlato());
+                    row.createCell(4).setCellValue(plato.getPrecioPlato());
+                    row.createCell(5).setCellValue(plato.getCodigoTipoPlato());
+
+                }
+
+                // Autoajustar el ancho de las columnas
+                for (int col = 0; col < 8; col++) {
+                    sheet.autoSizeColumn(col);
+                }
+
+                FileOutputStream fileOut = new FileOutputStream(file);
+                workbook.write(fileOut);
+                fileOut.close();
+
+                System.out.println("Archivo Excel generado exitosamente.");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
