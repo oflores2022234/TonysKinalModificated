@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
 import org.alejandroflores.bean.Login;
@@ -22,7 +23,7 @@ public class LoginController implements Initializable {
     private Principal escenarioPrincipal;
     private ObservableList<Usuario> listaUsuario;
     @FXML private TextField txtUsuario;
-    @FXML private TextField txtPassword;
+    @FXML private PasswordField pswPassword;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -54,7 +55,7 @@ public class LoginController implements Initializable {
         int x = 0;
         boolean bandera = false;
         login.setUsuarioMaster(txtUsuario.getText());
-        login.setPasswordLogin(txtPassword.getText());
+        login.setPasswordLogin(pswPassword.getText());
         while(x < getUsuario().size()){
             String user = getUsuario().get(x).getUsuarioLogin();
             String pass = getUsuario().get(x).getContrasena();
@@ -77,17 +78,17 @@ public class LoginController implements Initializable {
     
     public void desacrivarControles(){
         txtUsuario.setEditable(false);
-        txtPassword.setEditable(false);
+        pswPassword.setEditable(false);
     }
     
     public void activarControles(){
         txtUsuario.setEditable(true);
-        txtPassword.setEditable(true);
+        pswPassword.setEditable(true);
     }
     
     public void limpiarControles(){
         txtUsuario.clear();
-        txtPassword.clear();
+        pswPassword.clear();
     }
 
     public Principal getEscenarioPrincipal() {
