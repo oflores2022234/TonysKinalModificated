@@ -84,7 +84,7 @@
       <Pane fx:id="pane31111" layoutX="1018.0" layoutY="458.0" prefHeight="211.0" prefWidth="51.0" style="-fx-background-color: #f5c03c; -fx-background-radius: 50 50 50 50;" />
       <ImageView fitHeight="242.0" fitWidth="239.0" layoutX="154.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/programador.png" />
+            <Image url="@../image/programer.jpeg" />
          </image>
       </ImageView>
    </children>
